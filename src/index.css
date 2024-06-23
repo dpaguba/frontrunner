@@ -1,0 +1,212 @@
+@import "tailwindcss";
+
+* { scrollbar-width: none; }
+*::-webkit-scrollbar { display: none; }
+/* Nike design system tokens */
+@theme {
+  /* Colors */
+  --color-ink: #111111;
+  --color-canvas: #ffffff;
+  --color-soft-cloud: #f5f5f5;
+  --color-hairline: #cacacb;
+  --color-hairline-soft: #e5e5e5;
+  --color-charcoal: #39393b;
+  --color-ash: #4b4b4d;
+  --color-mute: #707072;
+  --color-stone: #9e9ea0;
+  --color-sale: #d30005;
+  --color-success: #007d48;
+  --color-info: #1151ff;
+
+  /* Fonts */
+  --font-display: 'Anton', 'Helvetica Neue', Arial, sans-serif;
+  --font-ui: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+
+  /* Border radius */
+  --radius-none: 0px;
+  --radius-sm: 18px;
+  --radius-md: 24px;
+  --radius-lg: 30px;
+  --radius-full: 9999px;
+
+  /* Spacing */
+  --spacing-section: 48px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+html::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  font-family: var(--font-ui);
+  background-color: var(--color-canvas);
+  color: var(--color-ink);
+}
+
+/* Campaign headline */
+.display-campaign {
+  font-family: var(--font-display);
+  font-size: clamp(72px, 11vw, 148px);
+  line-height: 0.9;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+}
+
+.display-campaign-sm {
+  font-family: var(--font-display);
+  font-size: clamp(32px, 5vw, 64px);
+  line-height: 0.9;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+}
+
+/* Pill button */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-ink);
+  color: var(--color-canvas);
+  font-family: var(--font-ui);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  padding: 12px 28px;
+  height: 48px;
+  border-radius: var(--radius-lg);
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: opacity 0.15s ease;
+  white-space: nowrap;
+}
+
+.btn-primary:hover {
+  opacity: 0.85;
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-soft-cloud);
+  color: var(--color-ink);
+  font-family: var(--font-ui);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  padding: 12px 28px;
+  height: 48px;
+  border-radius: var(--radius-lg);
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: opacity 0.15s ease;
+  white-space: nowrap;
+}
+
+.btn-secondary:hover {
+  opacity: 0.85;
+}
+
+.btn-outline-on-image {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-canvas);
+  color: var(--color-ink);
+  font-family: var(--font-ui);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.5;
+  padding: 10px 22px;
+  height: 44px;
+  border-radius: var(--radius-lg);
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: opacity 0.15s ease;
+  white-space: nowrap;
+}
+
+.btn-outline-on-image:hover {
+  opacity: 0.9;
+}
+
+.demo-nav-btn {
+  color: var(--color-stone);
+  transition: color 0.15s;
+}
+
+.demo-nav-btn:hover {
+  color: var(--color-canvas);
+}
+
+/* ── Responsive layout ── */
+.showcase-nav {
+  padding: 0 40px;
+}
+.showcase-section {
+  padding: 80px 40px;
+}
+.showcase-footer {
+  padding: 32px 40px;
+}
+.showcase-section-gap {
+  gap: 40px 32px;
+}
+
+@media (max-width: 1024px) {
+  .showcase-section {
+    padding: 64px 32px;
+  }
+  .showcase-nav {
+    padding: 0 32px;
+  }
+  .showcase-footer {
+    padding: 28px 32px;
+  }
+}
+
+@media (max-width: 768px) {
+  .showcase-nav {
+    padding: 0 20px;
+  }
+  .showcase-section {
+    padding: 48px 20px;
+  }
+  .showcase-footer {
+    padding: 24px 20px;
+  }
+  .showcase-section-gap {
+    gap: 24px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .showcase-nav {
+    padding: 0 16px;
+  }
+  .showcase-section {
+    padding: 40px 16px;
+  }
+  .showcase-footer {
+    padding: 20px 16px;
+  }
+  .showcase-section-gap {
+    gap: 20px 16px;
+  }
+}

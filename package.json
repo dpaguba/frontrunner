@@ -2,5 +2,35 @@
   "name": "frontrunner",
   "private": true,
   "version": "0.0.0",
-  "type": "module"
+  "type": "module",
+  "scripts": {
+    "postinstall": "npm install --prefix projects/valorant-nft && npm install --prefix projects/beauty-studio && npm install --prefix projects/gabriel-contassot && npm install --prefix projects/zajno-digital-studio && npm install --prefix projects/absent-agency && npm install --prefix projects/jirani && npm install --prefix projects/velocity",
+    "dev": "vite",
+    "build": "npm run build:demos && vite build",
+    "build:demos": "mkdir -p public/demos && npm run build:valorant-nft && npm run build:beauty-studio && npm run build:gabriel-contassot && npm run build:zajno-digital-studio && npm run build:absent-agency && npm run build:jirani && npm run build:velocity",
+    "build:valorant-nft": "cd projects/valorant-nft && npm run build && rm -rf ../../public/demos/valorant-nft && cp -r dist ../../public/demos/valorant-nft",
+    "build:beauty-studio": "cd projects/beauty-studio && npm run build && rm -rf ../../public/demos/beauty-studio && cp -r dist ../../public/demos/beauty-studio",
+    "build:gabriel-contassot": "cd projects/gabriel-contassot && npm run build && rm -rf ../../public/demos/gabriel-contassot && cp -r dist ../../public/demos/gabriel-contassot",
+    "build:zajno-digital-studio": "cd projects/zajno-digital-studio && npm run build && rm -rf ../../public/demos/zajno-digital-studio && cp -r dist ../../public/demos/zajno-digital-studio",
+    "build:absent-agency": "cd projects/absent-agency && npm run build && rm -rf ../../public/demos/absent-agency && cp -r dist ../../public/demos/absent-agency",
+    "build:jirani": "cd projects/jirani && npm run build && rm -rf ../../public/demos/jirani && cp -r dist ../../public/demos/jirani",
+    "build:velocity": "cd projects/velocity && npm run build && rm -rf ../../public/demos/velocity && cp -r dist ../../public/demos/velocity",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "gsap": "^3.13.0",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "react-router-dom": "^7.6.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.1.11",
+    "@types/react": "^19.1.9",
+    "@types/react-dom": "^19.1.7",
+    "@vitejs/plugin-react": "^4.7.0",
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.11",
+    "vite": "^7.1.0"
+  }
 }

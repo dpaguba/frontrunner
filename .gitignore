@@ -3,6 +3,8 @@ dist
 .DS_Store
 *.local
 .vite
+
+# sub-projects build artifacts
 projects/*/node_modules
 projects/*/dist
 public/demos
